@@ -1,7 +1,7 @@
 # 🚀 EduDash
 **Centrum dowodzenia dla nowoczesnych placówek edukacyjnych.**
 
-![Project Status](https://img.shields.io/badge/Sprint-1_Completed-success)
+![Project Status](https://img.shields.io/badge/Sprint-4_Completed-success)
 ![Platform](https://img.shields.io/badge/Mobile--First-PWA-blue)
 ![Purpose](https://img.shields.io/badge/Internal-Tool-orange)
 
