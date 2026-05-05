@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router";
 import { useAuth } from "../../context/AuthContext";
 import { Eye, EyeOff, BookOpen, AlertCircle } from "lucide-react";
+import { trackLoginSuccess, trackLoginFailure } from "../../utils/analytics";
+import { SeoHead } from "../layout/SeoHead";
 
 export function LoginPage() {
   const { login } = useAuth();
@@ -22,12 +24,15 @@ export function LoginPage() {
     const success = login(email, password);
     setLoading(false);
     if (success) {
+      const role = email === "admin@szkola.pl" ? "admin" : "teacher";
+      trackLoginSuccess(role);
       if (email === "admin@szkola.pl") {
         navigate("/admin");
       } else {
         navigate("/onboarding");
       }
     } else {
+      trackLoginFailure();
       setError("Nieprawidłowy e-mail lub hasło. Sprawdź dane i spróbuj ponownie.");
     }
   };
@@ -87,6 +92,8 @@ export function LoginPage() {
   }
 
   return (
+    <>
+    <SeoHead title="Logowanie" description="Zaloguj się do systemu EduDash – centrum dowodzenia dla dyrektorów i nauczycieli." />
     <div className="h-screen w-screen bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900 flex items-center justify-center p-5 overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -227,5 +234,6 @@ export function LoginPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }

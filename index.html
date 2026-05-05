@@ -1,16 +1,125 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Web App for Tutoring School</title>
-      <style>html, body { height: 100%; margin: 0; } #root { height: 100%; }</style>
-    </head>
+    <!-- ═══════════════════════════════════════════════════════════
+         SEO – Tytuł i opis
+    ═══════════════════════════════════════════════════════════ -->
+    <title>EduDash – Centrum Dowodzenia dla Nowoczesnych Placówek Edukacyjnych</title>
+    <meta
+      name="description"
+      content="EduDash to kompleksowy system zarządzania szkołą: dziennik elektroniczny, grafik nauczycieli, finanse i raporty. Zwiększ efektywność swojej placówki edukacyjnej."
+    />
+    <meta
+      name="keywords"
+      content="zarządzanie szkołą, dziennik elektroniczny, edukacja cyfrowa, grafik nauczycieli, system oświaty, plan lekcji, finanse szkoły, EduDash"
+    />
+    <meta name="author" content="EduDash" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://edudash.pl/" />
 
-    <body>
-      <div id="root"></div>
-      <script type="module" src="/src/main.tsx"></script>
-    </body>
-  </html>
-  
+    <!-- ═══════════════════════════════════════════════════════════
+         Open Graph (Facebook, LinkedIn)
+    ═══════════════════════════════════════════════════════════ -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://edudash.pl/" />
+    <meta
+      property="og:title"
+      content="EduDash – Centrum Dowodzenia dla Nowoczesnych Placówek Edukacyjnych"
+    />
+    <meta
+      property="og:description"
+      content="Kompleksowy system zarządzania szkołą: dziennik elektroniczny, grafik, finanse i raporty w jednym miejscu. Zgodny z RODO."
+    />
+    <meta property="og:locale" content="pl_PL" />
+    <meta property="og:site_name" content="EduDash" />
+
+    <!-- ═══════════════════════════════════════════════════════════
+         Twitter Card
+    ═══════════════════════════════════════════════════════════ -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="EduDash – System Zarządzania Szkołą"
+    />
+    <meta
+      name="twitter:description"
+      content="Zarządzaj szkołą efektywnie: grafik, finanse, dziennik elektroniczny i raporty. Dostępny jako aplikacja PWA."
+    />
+
+    <!-- ═══════════════════════════════════════════════════════════
+         PWA
+    ═══════════════════════════════════════════════════════════ -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#4F46E5" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="EduDash" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="EduDash" />
+
+    <!-- ═══════════════════════════════════════════════════════════
+         Structured Data (JSON-LD)
+    ═══════════════════════════════════════════════════════════ -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "EduDash",
+        "description": "Centrum dowodzenia dla nowoczesnych placówek edukacyjnych. System zarządzania szkołą z dziennikiem elektronicznym, grafikiem i raportami.",
+        "applicationCategory": "EducationApplication",
+        "operatingSystem": "Web, Android, iOS",
+        "url": "https://edudash.pl",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "PLN"
+        },
+        "inLanguage": "pl",
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "Dyrektorzy szkół, nauczyciele"
+        }
+      }
+    </script>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         Google Analytics 4 (GA4)
+         ZASTĄP G-XXXXXXXX swoim Measurement ID z Google Analytics
+    ═══════════════════════════════════════════════════════════ -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXX', {
+        page_title: document.title,
+        page_location: window.location.href,
+        send_page_view: true,
+        // Parametry niestandardowe dla EduDash
+        app_name: 'EduDash',
+        app_version: '1.0.0',
+      });
+    </script>
+
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      #root {
+        height: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

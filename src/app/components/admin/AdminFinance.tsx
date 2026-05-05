@@ -1,4 +1,6 @@
 import React from "react";
+import { trackReportGenerated } from "../../utils/analytics";
+import { SeoHead } from "../layout/SeoHead";
 import { useState } from "react";
 import {
   Download,
@@ -219,6 +221,7 @@ export function AdminFinance() {
     a.click();
     URL.revokeObjectURL(url);
 
+    trackReportGenerated("csv", selectedMonth);
     setDownloadSuccess(true);
     setTimeout(() => setDownloadSuccess(false), 2500);
   };
@@ -386,6 +389,7 @@ export function AdminFinance() {
           </button>
           <button
             onClick={() => {
+              trackReportGenerated("pdf", selectedMonth);
               setDownloadSuccess(true);
               setTimeout(() => setDownloadSuccess(false), 2500);
             }}

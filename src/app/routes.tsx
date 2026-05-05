@@ -1,5 +1,6 @@
 import { createBrowserRouter, Navigate } from "react-router";
 import { LoginPage } from "./components/login/LoginPage";
+import { LandingPage } from "./components/landing/LandingPage";
 import { OnboardingPage } from "./components/onboarding/OnboardingPage";
 import { TeacherLayout } from "./components/teacher/TeacherLayout";
 import { TeacherDashboard } from "./components/teacher/TeacherDashboard";
@@ -14,6 +15,7 @@ import { AdminFinance } from "./components/admin/AdminFinance";
 import { AdminSettings } from "./components/admin/AdminSettings";
 
 export const router = createBrowserRouter([
+  { path: "/landing", Component: LandingPage },
   { path: "/", Component: LoginPage },
   { path: "/onboarding", Component: OnboardingPage },
   {
