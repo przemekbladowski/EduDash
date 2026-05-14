@@ -1,0 +1,24 @@
+# EduDash – robots.txt
+# System Zarządzania Szkołą | https://edudash.pl
+
+User-agent: *
+
+# Strony publiczne – dostępne dla robotów
+Allow: /landing
+Allow: /
+
+# Strony aplikacji – wymagają logowania, nie indeksować
+Disallow: /admin/
+Disallow: /teacher/
+Disallow: /onboarding
+
+# Zasoby statyczne
+Allow: /icons/
+Allow: /manifest.json
+Allow: /sitemap.xml
+
+# Sitemap
+Sitemap: https://edudash.pl/sitemap.xml
+
+# Crawl-delay dla uprzejmości
+Crawl-delay: 10
